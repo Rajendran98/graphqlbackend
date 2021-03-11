@@ -1,4 +1,4 @@
-NodeJS graphQL MySQL example
+Testing example
 ==================================
 
 This is a simple experimental example of how to match graphql-js and MySQL for the implementation of a GraphQL API.
@@ -33,59 +33,10 @@ Please remember to export the example SQL schema located in ./sql/exapp.sql
 #### Show all bacons
 ```js
 {
-  bacons {
-    id,
-    type,
-    price
+  devicetype {
+    ID,
+    DeviceType,
+    IsActive
   }
 }
 ```
-
-### Filter bacons by price
-```js
-{
-  bacons(price: 25) {
-    id,
-    type,
-    price
-  }
-}
-```
-
-### Gets a bacon by its ID
-```js
-{
-  bacon(id: 1) {
-    id,
-    type,
-    price
-  }
-}
-```
-
-### Adds a new bacon
-```js
-mutation {
-  addBacon(type: "truffy", price: 99) {
-    id,
-    type
-    price
-  }
-}
-```
-
-### Updates a bacon
-```js
-mutation {
-  updateBacon(id: 1, type: "musky", price: 1) {
-    id,
-    type
-    price
-  }
-}
-```
-
-License
--------
-
-MIT
