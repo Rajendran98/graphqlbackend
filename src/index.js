@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const Routes = require('./routes')
-
+var cors = require('cors')
 class App {
 
     /**
@@ -30,6 +30,7 @@ class App {
     applyMiddleware() {
         //Allows the server to parse json
         this.expressApp.use(bodyParser.json())
+        this.expressApp.use(cors())
 
         //Registers the routes used by the app
         new Routes(this.expressApp)
@@ -51,5 +52,6 @@ class App {
 
 //Runs the thing
 const app = new App()
+
 app.applyMiddleware()
 app.run()
